@@ -2,12 +2,12 @@
     "name": "vscode-combine-scripts",
     "displayName": "Combine Scripts",
     "description": "Create a single combined script from several files.",
-    "version": "1.1.0",
+    "icon": "icons/main-icon.png",
+    "version": "1.1.1",
     "publisher": "BateleurIO",
     "repository": "https://github.com/BateleurIO/vscode-combine-scripts.git",
     "engines": {
-        "vscode": "^1.25.0",
-        "sqlops": "*"
+        "vscode": "^1.25.0"
     },
     "categories": [
         "Other"
@@ -28,7 +28,7 @@
         "vscode:prepublish": "npm run compile",
         "compile": "tsc -p ./",
         "watch": "tsc -watch -p ./",
-        "postinstall": "node ./node_modules/vscode/bin/install && node ./node_modules/sqlops/bin/install",
+        "postinstall": "node ./node_modules/vscode/bin/install",
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
@@ -36,10 +36,10 @@
         "@types/node": "^7.0.43",
         "@types/tmp": "^0.0.33",
         "tslint": "^5.8.0",
-        "typescript": "^2.6.1",
-        "vscode": "^1.1.6"
+        "typescript": "^2.6.1"
     },
     "dependencies": {
-        "tmp": "^0.0.33"
+        "tmp": "0.0.33",
+        "vscode": "^1.1.18"
     }
 }

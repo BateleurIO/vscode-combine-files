@@ -1,21 +1,21 @@
 'use strict';
 
-import * as vscode from 'vscode';
+import { commands, ExtensionContext, workspace, window } from 'vscode';
 // import * as sqlops from 'sqlops';
 import * as fs from 'fs';
 import * as tmp from 'tmp';
 import { FullFileList } from './full-file-list';
 import { FileConcatenator } from './file-concat';
 
-export function activate(context: vscode.ExtensionContext) {
+export function activate(context: ExtensionContext) {
 
-    context.subscriptions.push(vscode.commands.registerCommand('extension.combineScripts', (selectedFile, fileList) => {
+    context.subscriptions.push(commands.registerCommand('extension.combineScripts', (selectedFile, fileList) => {
         let files = (new FullFileList(fileList)).list;
         let text = (new FileConcatenator(files)).getText();
         let tempName = tmp.tmpNameSync() + '.sql';
         fs.writeFileSync(tempName, text);
-        vscode.workspace.openTextDocument(tempName).then(doc => {
-            vscode.window.showTextDocument(doc);
+        workspace.openTextDocument(tempName).then(doc => {
+            window.showTextDocument(doc);
         });
     }));
 
