@@ -1,10 +1,10 @@
 {
-    "name": "sqlops-combine-scripts",
+    "name": "vscode-combine-scripts",
     "displayName": "Combine Scripts",
     "description": "Create a single combined script from several files.",
     "version": "1.1.0",
     "publisher": "BateleurIO",
-    "repository": "https://github.com/BateleurIO/sqlops-combine-scripts.git",
+    "repository": "https://github.com/BateleurIO/vscode-combine-scripts.git",
     "engines": {
         "vscode": "^1.25.0",
         "sqlops": "*"
@@ -35,7 +35,6 @@
         "@types/mocha": "^2.2.42",
         "@types/node": "^7.0.43",
         "@types/tmp": "^0.0.33",
-        "sqlops": "github:anthonydresser/sqlops-extension-sqlops",
         "tslint": "^5.8.0",
         "typescript": "^2.6.1",
         "vscode": "^1.1.6"

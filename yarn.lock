@@ -795,10 +795,6 @@ hoek@2.x.x:
   version "2.16.3"
   resolved "https://registry.yarnpkg.com/hoek/-/hoek-2.16.3.tgz#20bb7403d3cea398e91dc4710a8ff1b8274a25ed"
 
-hoek@^5.0.3:
-  version "5.0.3"
-  resolved "https://registry.yarnpkg.com/hoek/-/hoek-5.0.3.tgz#b71d40d943d0a95da01956b547f83c4a5b4a34ac"
-
 http-signature@~1.1.0:
   version "1.1.1"
   resolved "https://registry.yarnpkg.com/http-signature/-/http-signature-1.1.1.tgz#df72e267066cd0ac67fb76adf8e134a8fbcf91bf"
@@ -1506,25 +1502,6 @@ split@0.3:
 sprintf-js@~1.0.2:
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/sprintf-js/-/sprintf-js-1.0.3.tgz#04e6926f662895354f3dd015203633b857297e2c"
-
-"sqlops@github:anthonydresser/sqlops-extension-sqlops":
-  version "1.1.11"
-  resolved "https://codeload.github.com/anthonydresser/sqlops-extension-sqlops/tar.gz/dac501bbaa03a25239c060c6371dfdcf06707599"
-  dependencies:
-    glob "^7.1.2"
-    gulp-chmod "^2.0.0"
-    gulp-filter "^5.0.1"
-    gulp-gunzip "1.0.0"
-    gulp-remote-src "^0.4.3"
-    gulp-symdest "^1.1.0"
-    gulp-untar "^0.0.6"
-    gulp-vinyl-zip "^2.1.0"
-    mocha "^4.0.1"
-    request "^2.83.0"
-    semver "^5.4.1"
-    source-map-support "^0.5.0"
-    url-parse "^1.1.9"
-    vinyl-source-stream "^1.1.0"
 
 sshpk@^1.7.0:
   version "1.14.2"
