@@ -3,7 +3,7 @@
     "displayName": "Combine Scripts",
     "description": "Create a single combined script from several files.",
     "icon": "icons/main-icon.png",
-    "version": "1.1.1",
+    "version": "1.3.0",
     "publisher": "BateleurIO",
     "repository": "https://github.com/BateleurIO/vscode-combine-scripts.git",
     "engines": {
@@ -22,7 +22,14 @@
                 "command": "extension.combineScripts",
                 "title": "Combine Scripts"
             }
-        ]
+        ],
+        "menus": {
+            "explorer/context": [
+                {
+                    "command": "extension.combineScripts"
+                }
+            ]
+        }
     },
     "scripts": {
         "vscode:prepublish": "npm run compile",
