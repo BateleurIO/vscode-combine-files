@@ -1,11 +1,11 @@
 {
     "name": "vscode-combine-scripts",
-    "displayName": "Combine Scripts",
-    "description": "Create a single combined script from several files.",
+    "displayName": "Combine Files",
+    "description": "Create a single combined output file from several input files.",
     "icon": "icons/main-icon.png",
-    "version": "1.3.0",
+    "version": "2.0.0",
     "publisher": "BateleurIO",
-    "repository": "https://github.com/BateleurIO/vscode-combine-scripts.git",
+    "repository": "https://github.com/BateleurIO/vscode-combine-files.git",
     "engines": {
         "vscode": "^1.25.0"
     },
@@ -29,6 +29,210 @@
                     "command": "extension.combineScripts"
                 }
             ]
+        },
+        "configuration": {
+            "title": "Combine Files",
+            "properties": {
+                "combineScripts.sqlScripts.includeToc": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Include Table of Contents"
+                },
+                "combineScripts.sqlScripts.fileGlobs": {
+                    "type": "string[]",
+                    "default": [
+                        "**/*.sql"
+                    ],
+                    "description": "File Globs"
+                },
+                "combineScripts.sqlScripts.fileHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "/**********************************************************************************",
+                        "* This is a concatenation of all the selected files, including files in subfolders.",
+                        "* The start and end of each file contains a comment with its name, as well as a",
+                        "* print statement.",
+                        "***********************************************************************************"
+                    ],
+                    "description": "File Header"
+                },
+                "combineScripts.sqlScripts.fileFooter": {
+                    "type": "string[]",
+                    "default": [],
+                    "description": "File Footer"
+                },
+                "combineScripts.sqlScripts.tocHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "* These are the line numbers for the included files:"
+                    ],
+                    "description": "Table of Contents Header"
+                },
+                "combineScripts.sqlScripts.tocEntry": {
+                    "type": "string",
+                    "default": "* ${lineNo}\t\t${entryPath}",
+                    "description": "Table of Contents Entry"
+                },
+                "combineScripts.sqlScripts.tocFooter": {
+                    "type": "string[]",
+                    "default": [
+                        "***********************************************************************************/"
+                    ],
+                    "description": "Table of Contents Footer"
+                },
+                "combineScripts.sqlScripts.entryHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "/*********************************************************************************",
+                        "* Start: ${entryPath}",
+                        "**********************************************************************************/",
+                        "print 'Start: ${entryPath}'",
+                        "GO"
+                    ],
+                    "description": "Individual Script Header"
+                },
+                "combineScripts.sqlScripts.entryFooter": {
+                    "type": "string[]",
+                    "default": [
+                        "GO",
+                        "/*********************************************************************************",
+                        "* End: ${entryPath}",
+                        "**********************************************************************************/",
+                        "print 'End: ${entryPath}'",
+                        "GO",
+                        "/*********************************************************************************/"
+                    ],
+                    "description": "Individual Script Footer"
+                },
+                "combineScripts.markdown.includeToc": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Include Table of Contents"
+                },
+                "combineScripts.markdown.fileGlobs": {
+                    "type": "string[]",
+                    "default": [
+                        "**/*.md"
+                    ],
+                    "description": "File Globs"
+                },
+                "combineScripts.markdown.fileHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "# Combined Document",
+                        ""
+                    ],
+                    "description": "File Header"
+                },
+                "combineScripts.markdown.fileFooter": {
+                    "type": "string[]",
+                    "default": [],
+                    "description": "File Footer"
+                },
+                "combineScripts.markdown.tocHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "## Included Files"
+                    ],
+                    "description": "Table of Contents Header"
+                },
+                "combineScripts.markdown.tocEntry": {
+                    "type": "string",
+                    "default": "* ${lineNo}\t\t${entryPath}",
+                    "description": "Table of Contents Entry"
+                },
+                "combineScripts.markdown.tocFooter": {
+                    "type": "string[]",
+                    "default": [
+                        "",
+                        "---",
+                        ""
+                    ],
+                    "description": "Table of Contents Footer"
+                },
+                "combineScripts.markdown.entryHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "",
+                        "> ${entryPath}",
+                        "---"
+                    ],
+                    "description": "Individual File Header"
+                },
+                "combineScripts.markdown.entryFooter": {
+                    "type": "string[]",
+                    "default": [
+                        "",
+                        "---",
+                        ""
+                    ],
+                    "description": "Individual File Footer"
+                },
+                "combineScripts.textFiles.includeToc": {
+                    "type": "boolean",
+                    "default": true,
+                    "description": "Include Table of Contents"
+                },
+                "combineScripts.textFiles.fileGlobs": {
+                    "type": "string[]",
+                    "default": [
+                        "**/*.txt"
+                    ],
+                    "description": "File Globs"
+                },
+                "combineScripts.textFiles.fileHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "# Combined Document",
+                        ""
+                    ],
+                    "description": "File Header"
+                },
+                "combineScripts.textFiles.fileFooter": {
+                    "type": "string[]",
+                    "default": [],
+                    "description": "File Footer"
+                },
+                "combineScripts.textFiles.tocHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "## Included Files"
+                    ],
+                    "description": "Table of Contents Header"
+                },
+                "combineScripts.textFiles.tocEntry": {
+                    "type": "string",
+                    "default": "* ${lineNo}\t\t${entryPath}",
+                    "description": "Table of Contents Entry"
+                },
+                "combineScripts.textFiles.tocFooter": {
+                    "type": "string[]",
+                    "default": [
+                        "",
+                        "---",
+                        ""
+                    ],
+                    "description": "Table of Contents Footer"
+                },
+                "combineScripts.textFiles.entryHeader": {
+                    "type": "string[]",
+                    "default": [
+                        "",
+                        "> ${entryPath}",
+                        "---"
+                    ],
+                    "description": "Individual File Header"
+                },
+                "combineScripts.textFiles.entryFooter": {
+                    "type": "string[]",
+                    "default": [
+                        "",
+                        "---",
+                        ""
+                    ],
+                    "description": "Individual File Footer"
+                }
+            }
         }
     },
     "scripts": {
@@ -39,14 +243,17 @@
         "test": "npm run compile && node ./node_modules/vscode/bin/test"
     },
     "devDependencies": {
-        "@types/mocha": "^2.2.42",
-        "@types/node": "^7.0.43",
-        "@types/tmp": "^0.0.33",
-        "tslint": "^5.8.0",
-        "typescript": "^2.6.1"
+        "@types/glob": "^7.1.1",
+        "@types/mocha": "^5.2.6",
+        "@types/node": "^11.11.6",
+        "@types/tmp": "0.0.34",
+        "tslint": "^5.14.0",
+        "typescript": "^3.3.4000",
+        "vscode": "^1.1.33"
     },
     "dependencies": {
+        "@cobuskruger/combine-files": "^1.0.4",
         "tmp": "0.0.33",
-        "vscode": "^1.1.18"
+        "url-parse": "^1.4.4"
     }
 }
