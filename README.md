@@ -1,4 +1,4 @@
-# Combine Scripts for Azure Data Studio
+# Combine Files for Visual Studio Code
 
 Combines several files spread over several folders. This is useful in many cases.
 
