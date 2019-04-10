@@ -3,7 +3,7 @@
     "displayName": "Combine Files",
     "description": "Create a single combined output file from several input files.",
     "icon": "icons/main-icon.png",
-    "version": "2.0.1",
+    "version": "2.0.2",
     "publisher": "BateleurIO",
     "repository": "https://github.com/BateleurIO/vscode-combine-files.git",
     "engines": {
@@ -20,7 +20,7 @@
         "commands": [
             {
                 "command": "extension.combineScripts",
-                "title": "Combine Scripts"
+                "title": "Combine Files"
             }
         ],
         "menus": {

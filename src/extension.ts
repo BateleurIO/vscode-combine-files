@@ -10,7 +10,14 @@ export function activate(context: vscode.ExtensionContext) {
     context.subscriptions.push(vscode.commands.registerCommand('extension.combineScripts', async(selectedFile: any, fileList: any) => {
         const rootPath = <any>vscode.workspace.rootPath || './';
         const vscodeConfig = vscode.workspace.getConfiguration('combineScripts');
-        const configLoader = new ConfigLoader({ fileGroups: [vscodeConfig.sqlScripts, vscodeConfig.markdown, vscodeConfig.textFile] });
+        const configFileGroups = [];
+        for (const prop in vscodeConfig) {
+            if (vscodeConfig.hasOwnProperty(prop) && typeof(vscodeConfig[prop]) === 'object') {
+                configFileGroups.push(vscodeConfig[prop]);
+            }
+        }
+        const configLoader = new ConfigLoader({ fileGroups: configFileGroups }); 
+        // [vscodeConfig.sqlScripts, vscodeConfig.markdown, vscodeConfig.textFiles] });
         const configFilePath = path.resolve(rootPath, '.combinefilesrc.json');
         if (fs.existsSync(configFilePath)) {
             configLoader.addConfigFile(configFilePath);

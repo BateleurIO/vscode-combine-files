@@ -8,6 +8,12 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [2.0.2] - 2019-04-10
+
+1. Enabled dynamic loading of configuration types.
+2. Changed the menu item to Combine Files, to reflect the more generic functionality it now has.
+3. Fixed an error that showed when selecting the Combine Files option.
+
 ## [2.0.1] - 2019-04-05
 
 Fixed a rather blatant oversight in the Readme - it still referred to Azure Data Studio in the title.
