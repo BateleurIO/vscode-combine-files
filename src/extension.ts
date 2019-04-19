@@ -17,7 +17,6 @@ export function activate(context: vscode.ExtensionContext) {
             }
         }
         const configLoader = new ConfigLoader({ fileGroups: configFileGroups }); 
-        // [vscodeConfig.sqlScripts, vscodeConfig.markdown, vscodeConfig.textFiles] });
         const configFilePath = path.resolve(rootPath, '.combinefilesrc.json');
         if (fs.existsSync(configFilePath)) {
             configLoader.addConfigFile(configFilePath);

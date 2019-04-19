@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [2.0.3] - 2019-04-19
+
+Updated one of the upstream dependencies to fix a bug causing selected files being included in a file for every configuration.
+
 ## [2.0.2] - 2019-04-10
 
 1. Enabled dynamic loading of configuration types.
