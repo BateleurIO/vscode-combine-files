@@ -8,6 +8,10 @@ and this project adheres to [Semantic Versioning](https://semver.org/spec/v2.0.0
 
 * Nothing for now.
 
+## [2.0.5] - 2019-07-6
+
+Added default config that places a timestamp in the file header.
+
 ## [2.0.4] - 2019-07-6
 
 * Allow adding the time stamp to the file output.
