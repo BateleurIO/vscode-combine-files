@@ -105,6 +105,11 @@
                     ],
                     "description": "Individual Script Footer"
                 },
+                "combineScripts.markdown.outputFileName": {
+					"type": "string",
+					"default": "${fileWorkspaceFolder}/../combined.md",
+					"description": "Specify the output name of the combined markdown to be 'combined.md'"
+				},
                 "combineScripts.markdown.includeToc": {
                     "type": "boolean",
                     "default": true,
